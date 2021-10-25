@@ -1,5 +1,6 @@
 package br.com.treinamento;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,12 +23,23 @@ public class TreinamentoApplication implements CommandLineRunner {
 	
 	@Override
 	public void run(String... args) throws Exception {
-		List<Clientes> clientes = dao.buscaClientes(); 
-		System.out.println(clientes);
-		for(Clientes c : clientes){ 
-			System.out.println(c.getNome()); 
-			System.out.println(c.getSobrenome());
-		}
+	//	List<Clientes> clientes = dao.buscaClientes(); 
+	//	System.out.println(clientes);
+	//	for(Clientes c : clientes){ 
+	//		System.out.println(c.getNome()); 
+	//		System.out.println(c.getSobrenome());
+	//	}
+
+	Clientes cli = new Clientes();
+	cli.setDataNascimento(new Date());
+	cli.setEmail("exemple@gmail.com");
+	cli.setNome("luis");
+	cli.setSobrenome("Gama");
+    cli.setId(8l);
+	dao.salvarCliente(cli);
+		
+		
+		
 	}
 
 }
