@@ -29,7 +29,11 @@ public class InterfaceClienteimpl implements InterfaceCliente, RowMapper<Cliente
 	
 	@Override
 	public void salvarCliente(Clientes cliente) {
-		// TODO Auto-generated method stub
+	
+		jdbcTemplate.update(
+			    "INSERT INTO clientes (id, data_nascimento, email, nome, sobrenome) VALUES (?, ?, ?, ?, ?)",
+			   cliente.getId(), cliente.getDataNascimento(), cliente.getEmail(), cliente.getNome(), cliente.getSobrenome()
+			);
 		
 	}
 
