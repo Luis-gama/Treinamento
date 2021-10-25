@@ -1,0 +1,22 @@
+spring:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  profiles:
+    active: dev
+
+---
+
+spring:
+  profiles: dev
+  datasource:
+    url: jdbc:postgresql://localhost:5432/vendas
+    username: postgres
+    password: 2891
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    show-sql: true
+    hibernate: 
+      ddl-auto: update
