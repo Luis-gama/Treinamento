@@ -71,9 +71,15 @@ public class InterfaceClienteimpl implements InterfaceCliente, RowMapper<Cliente
 	
 
 	@Override
-	public void excluiCliente(Clientes cliente) {
-		// TODO Auto-generated method stub
+	public void excluiCliente(Long id) {
+		StringBuilder sql = new StringBuilder();
 		
+		List<Object>  paramentros = new ArrayList<Object>();
+		paramentros.add(id);
+		
+		sql.append("DELETE from clientes WHERE id= ? ");
+		
+		jdbcTemplate.update(sql.toString(), paramentros.toArray());
 	}
 
 

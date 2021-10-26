@@ -33,11 +33,12 @@ public class TreinamentoApplication implements CommandLineRunner {
 	Clientes cli = new Clientes();
 	cli.setDataNascimento(new Date());
 	cli.setEmail("exemple@gmail.com");
-	cli.setNome("luis");
-	cli.setSobrenome("Gama");
-    cli.setId(8l);
-	//dao.salvarCliente(cli);
-	dao.atualizarCliente(cli);
+	cli.setNome("bruno");
+	cli.setSobrenome("ferreira");
+    cli.setId(2l);
+	dao.salvarCliente(cli);
+	//dao.atualizarCliente(cli);
+	//dao.excluiCliente(8l);
 	}
 
 	

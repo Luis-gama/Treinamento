@@ -11,6 +11,6 @@ public interface InterfaceCliente {
 	public void salvarCliente(Clientes cliente);	
 	public void atualizarCliente(Clientes cliente);
 	public List<Clientes> buscaClientes();
-	public void excluiCliente(Clientes cliente);
+	public void excluiCliente(Long id);
 	
 }
