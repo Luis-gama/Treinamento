@@ -15,7 +15,7 @@ import org.springframework.stereotype.Repository;
 
 import br.com.treinamento.model.Clientes;
 @Repository
-public class InterfaceClienteimpl implements InterfaceCliente, RowMapper<Clientes> {
+public class InterfaceClienteimpl implements InterfaceCliente {
 
 	private JdbcTemplate jdbcTemplate;
 
@@ -82,14 +82,5 @@ public class InterfaceClienteimpl implements InterfaceCliente, RowMapper<Cliente
 		jdbcTemplate.update(sql.toString(), paramentros.toArray());
 	}
 
-
-
-
-
-	@Override
-	public Clientes mapRow(ResultSet rs, int rowNum) throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 }
