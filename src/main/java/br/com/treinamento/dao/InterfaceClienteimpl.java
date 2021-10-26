@@ -2,6 +2,7 @@ package br.com.treinamento.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.sql.DataSource;
@@ -39,8 +40,24 @@ public class InterfaceClienteimpl implements InterfaceCliente, RowMapper<Cliente
 
 	@Override
 	public void atualizarCliente(Clientes cliente) {
-		// TODO Auto-generated method stub
+		StringBuilder sql = new StringBuilder();
 		
+		List<Object>  paramentros = new ArrayList<Object>();
+		paramentros.add(cliente.getNome());
+		paramentros.add(cliente.getSobrenome());
+		paramentros.add(cliente.getDataNascimento());
+		paramentros.add(cliente.getEmail());
+		paramentros.add(cliente.getId());
+		
+		sql.append("update clientes ");
+		sql.append("SET         nome   = ?, ");
+		sql.append("sobrenome = ?, ");
+		sql.append("data_nascimento = ?, ");
+		sql.append("email = ? ");
+		sql.append("where id = ? ");
+		
+		jdbcTemplate.update(sql.toString(),paramentros.toArray());
+			 
 	}
 
 	

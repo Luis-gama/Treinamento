@@ -36,10 +36,12 @@ public class TreinamentoApplication implements CommandLineRunner {
 	cli.setNome("luis");
 	cli.setSobrenome("Gama");
     cli.setId(8l);
-	dao.salvarCliente(cli);
-		
-		
-		
+	//dao.salvarCliente(cli);
+	dao.atualizarCliente(cli);
 	}
 
+	
+	
+	
+	
 }
